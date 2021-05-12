@@ -1,6 +1,6 @@
 # Flutter Stack Canvas
 
-A simple canvas for placing widgets in a free style canvas-like manner by wrapping the widget in a Canvas Object and specifying its the offset and size.
+A simple canvas for placing widgets in a free style canvas-like manner by wrapping the widget in a Canvas Object and specifying its offset and size.
 
 Furthermore, the canvas offers tranformation utilities to
 - Scale the canvas: zoom in and out.
