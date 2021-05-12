@@ -119,6 +119,8 @@ StackCanvas(
 StackCanvasController(
     zoomChangeUnit: 0.10,         // The speed of zooming  (scale factor)
     moveChangeUnit: 30.00,        // The speed of movement (translation value)
+    offsetReference: Reference.TopLeft,
+    zoomReference: Reference.TopLeft,
 )
 ```
 
