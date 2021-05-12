@@ -10,6 +10,7 @@ All canvas tranformations can be animated.
 
 See the example app for a comprehensive demo.
 
+Inspired by [Rody Davis Jr](https://blog.codemagic.io/multi-touch-canvas-with-flutter/)
 
 ## Installation
 
