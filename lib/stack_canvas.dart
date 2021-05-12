@@ -1,7 +1,5 @@
 library stack_canvas;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'package:stack_canvas/Models/canvas_object.dart';
+export 'package:stack_canvas/Controller/stack_canvas_controller.dart';
+export 'package:stack_canvas/View/stack_canvas.dart';
