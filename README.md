@@ -1,14 +1,127 @@
-# stack_canvas
+# Flutter Stack Canvas
 
-A new Flutter package project.
+A simple canvas for placing widgets in a free style canvas-like manner by wrapping the widget in a Canvas Object and specifying its the offset and size.
 
-## Getting Started
+Furthermore, the canvas offers tranformation utilities to
+- Scale the canvas: zoom in and out.
+- Translate the canvas: move in the 4 directions.
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+All canvas tranformations can be animated.
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+<br></br>
+
+## Installation
+----------------
+Add `stack_canvas` as a dependency in your [pubspec.yaml](https://flutter.dev/docs/development/packages-and-plugins/using-packages) file.
+
+Import Stack Canvas:
+```dart
+import 'package:stack_canvas:stack_canvas.dart;
+```
+
+<br></br>
+
+## How to use
+----------------
+
+Simply use the `StackCanvas` widget to embed a new Canvas into your view. This is an empty canvas.
+```dart
+class MyView extends StatelessWidget {
+    @override
+    Widget build(BuildContext context) {
+        return Container(
+            StackCanvas(
+                controller: StackCanvasController(),
+            ),
+        );
+    }
+}
+```
+![Empty Canvas](misc/empty.png)
+
+
+
+Should you need to add objects (obviously), use the `StackCanvasController`. Using this controller, adding, removing, and transforming the canvas is becomes a simple task.
+```dart
+final StackCanvasController controller = StackCanvasController();
+```
+And give it to the `StackCanvas` you want to control.
+```dart
+StackCanvas(
+    controller: controller,
+),
+```
+
+Now, we can add any widgets we like by wrapping it inside a `CanvasObject`. `CanvasObject` is in fact generic and defined as `CanvasObject<T>`; however, most of times it will be `CanvasObject<Widget>, for we're using flutter.
+```dart
+List<CanvasObject<Widget>> objects = [
+    CanvasObject<Widget>(
+        dx: 100,             // Offset in x-axis
+        dy: 100,             // Offset in y-axis
+        width: 80,
+        height: 40,
+        child: Container(    // The widget to be rendered
+            color: Colors.red,
+        )
+    )
+];
+```
+Ofcourse you can add multiple objects at the same time using that list.
+
+Then add these widget objects to the canvas using the controller.
+```dart
+controller.addCanvasObjects(objects);
+```
+
+Voilà!
+
+![Empty Canvas](misc/object.png)
+
+<br></br>
+## Zoom & Move
+---------------------------
+
+### Zoom in & out
+
+```dart
+controller.zoomIn();
+controller.zoomOut();
+```
+
+| Zoomed In | Zoomed Out |
+|:---------:|:----------:|
+| ![Empty Canvas](misc/zoomedin.png) | ![Empty Canvas](misc/zoomedout.png) |
+
+
+### Move in 4 directions
+```dart
+controller.moveUp();
+controller.moveDown();
+controller.moveLeft();
+controller.moveRight();
+```
+
+<br></br>
+## Customizing the Canvas
+--------------
+
+Here are all the customizable properties with their default values
+```dart
+StackCanvas(
+    width: double.maxFinite,      // Full width
+    height: double.maxFinite,     // Full height
+    backgroundColor: Colors.white,
+    animationDuration: Duration(milliseconds: 400),
+    controller: controller,
+    disposeController: true,      // If set to false, you need to dispose the controller by yourself
+)
+```
+```dart
+StackCanvasController(
+    zoomChangeUnit: 0.10,         // The speed of zooming  (scale factor)
+    moveChangeUnit: 30.00,        // The speed of movement (translation value)
+)
+```
+
+----------------------
+<Video src="misc/desktop_demo.mp4" width="100%" autoplay muted loop>

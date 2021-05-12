@@ -6,6 +6,12 @@ import 'package:flutter/widgets.dart';
 import 'package:stack_canvas/Models/canvas_object.dart';
 
 class StackCanvasController {
+  StackCanvasController({
+    double zoomChangeUnit = 0.10,
+    double moveChangeUnit = 30.00,
+  })  : _scaleChangeUnit = zoomChangeUnit,
+        _offsetChangeUnit = moveChangeUnit;
+
   // For updating the ui with widgets
   final StreamController<List<CanvasObject<Widget>>>
       _canvasObjectsStreamController =
@@ -17,8 +23,8 @@ class StackCanvasController {
   static const Offset _defaultOffset = Offset(0, 0);
   static const double _defaultScale = 1;
   static const double _maxScaleMargin = 3;
-  static const double _scaleChangeUnit = 0.05;
-  static const double _offsetChangeUnit = 5.0;
+  final double _scaleChangeUnit;
+  final double _offsetChangeUnit;
 
   // Current canvas transformation values
   Offset _offset = _defaultOffset;

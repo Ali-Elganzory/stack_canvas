@@ -5,8 +5,8 @@ import 'package:stack_canvas/Models/canvas_object.dart';
 
 class StackCanvas extends StatefulWidget {
   const StackCanvas({
-    required this.width,
-    required this.height,
+    this.width = double.maxFinite,
+    this.height = double.maxFinite,
     this.backgroundColor = Colors.white,
     this.animationDuration = const Duration(milliseconds: 400),
     required this.canvasController,
