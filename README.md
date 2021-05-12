@@ -8,10 +8,12 @@ Furthermore, the canvas offers tranformation utilities to
 
 All canvas tranformations can be animated.
 
-<br></br>
+See the example app for a comprehensive demo.
+
+Inspired by [Rody Davis Jr](https://blog.codemagic.io/multi-touch-canvas-with-flutter/)
 
 ## Installation
-----------------
+
 Add `stack_canvas` as a dependency in your [pubspec.yaml](https://flutter.dev/docs/development/packages-and-plugins/using-packages) file.
 
 Import Stack Canvas:
@@ -19,10 +21,8 @@ Import Stack Canvas:
 import 'package:stack_canvas:stack_canvas.dart;
 ```
 
-<br></br>
 
 ## How to use
-----------------
 
 Simply use the `StackCanvas` widget to embed a new Canvas into your view. This is an empty canvas.
 ```dart
@@ -77,9 +77,9 @@ Voilà!
 
 ![Empty Canvas](misc/object.png)
 
-<br></br>
+
 ## Zoom & Move
----------------------------
+
 
 ### Zoom in & out
 
@@ -101,9 +101,8 @@ controller.moveLeft();
 controller.moveRight();
 ```
 
-<br></br>
+
 ## Customizing the Canvas
---------------
 
 Here are all the customizable properties with their default values
 ```dart
@@ -123,5 +122,5 @@ StackCanvasController(
 )
 ```
 
-----------------------
-<Video src="misc/desktop_demo.mp4" width="100%" autoplay muted loop>
+https://user-images.githubusercontent.com/50919012/118004334-aa88ab00-b349-11eb-8255-c2debd185eb3.mp4
+
