@@ -28,14 +28,6 @@ class _StackCanvasState extends State<StackCanvas> {
   final GlobalKey<State> containerKey = GlobalKey<State>();
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    widget.canvasController.canvasSize =
-        containerKey.currentContext?.size ?? Size.zero;
-    print(widget.canvasController.canvasSize);
-  }
-
-  @override
   void dispose() {
     super.dispose();
     if (widget.disposeController) widget.canvasController.dispose();
