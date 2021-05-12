@@ -41,7 +41,7 @@ class MyView extends StatelessWidget {
 
 
 
-Should you need to add objects (obviously), use the `StackCanvasController`. Using this controller, adding, removing, and transforming the canvas is becomes a simple task.
+Should you need to add objects (obviously), use the `StackCanvasController`. Using this controller, adding, removing, and transforming the canvas becomes a simple task.
 ```dart
 final StackCanvasController controller = StackCanvasController();
 ```
@@ -52,7 +52,7 @@ StackCanvas(
 ),
 ```
 
-Now, we can add any widgets we like by wrapping it inside a `CanvasObject`. `CanvasObject` is in fact generic and defined as `CanvasObject<T>`; however, most of times it will be `CanvasObject<Widget>, for we're using flutter.
+Now, we can add any widgets we like by wrapping it inside a `CanvasObject`. `CanvasObject` is, in fact, a generic type and is defined as `CanvasObject<T>`; however, most of times, it will be `CanvasObject<Widget>`, for we're using flutter.
 ```dart
 List<CanvasObject<Widget>> objects = [
     CanvasObject<Widget>(
@@ -104,7 +104,7 @@ controller.moveRight();
 
 ## Customizing the Canvas
 
-Here are all the customizable properties with their default values
+Here are all the customizable properties with their default values.
 ```dart
 StackCanvas(
     width: double.maxFinite,      // Full width
