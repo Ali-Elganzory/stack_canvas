@@ -25,6 +25,16 @@ class StackCanvas extends StatefulWidget {
 }
 
 class _StackCanvasState extends State<StackCanvas> {
+  final GlobalKey<State> containerKey = GlobalKey<State>();
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    widget.canvasController.canvasSize =
+        containerKey.currentContext?.size ?? Size.zero;
+    print(widget.canvasController.canvasSize);
+  }
+
   @override
   void dispose() {
     super.dispose();
@@ -36,25 +46,32 @@ class _StackCanvasState extends State<StackCanvas> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      key: containerKey,
       width: this.widget.width,
       height: this.widget.height,
       color: widget.backgroundColor,
-      child: StreamBuilder<List<CanvasObject<Widget>>>(
-          stream: widget.canvasController.canvasObjectsStream,
-          builder: (_, snapshot) {
-            if (snapshot.hasData) canvasObjects = snapshot.data!;
+      child: LayoutBuilder(
+        builder: (_, constraints) {
+          widget.canvasController.canvasSize = constraints.smallest;
+          return StreamBuilder<List<CanvasObject<Widget>>>(
+            stream: widget.canvasController.canvasObjectsStream,
+            builder: (_, snapshot) {
+              if (snapshot.hasData) canvasObjects = snapshot.data!;
 
-            return Stack(
-              children: [
-                for (final CanvasObject<Widget> obj in canvasObjects)
-                  AnimatedPositioned.fromRect(
-                    duration: widget.animationDuration,
-                    rect: obj.rect,
-                    child: obj.child,
-                  ),
-              ],
-            );
-          }),
+              return Stack(
+                children: [
+                  for (final CanvasObject<Widget> obj in canvasObjects)
+                    AnimatedPositioned.fromRect(
+                      duration: widget.animationDuration,
+                      rect: obj.rect,
+                      child: obj.child,
+                    ),
+                ],
+              );
+            },
+          );
+        },
+      ),
     );
   }
 }

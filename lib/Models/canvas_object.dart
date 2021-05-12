@@ -52,4 +52,15 @@ class CanvasObject<T> {
       height: transformedRect.height,
     );
   }
+
+  CanvasObject<T> transformFromOrigin(Offset offset, double scale, Offset origin) {
+    final Rect transformedRect = this.rect.transformFromOrigin(offset, scale, origin);
+    
+    return this.copyWith(
+      dx: transformedRect.left,
+      dy: transformedRect.top,
+      width: transformedRect.width,
+      height: transformedRect.height,
+    );
+  }
 }

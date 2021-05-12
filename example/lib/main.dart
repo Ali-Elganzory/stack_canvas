@@ -26,7 +26,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final StackCanvasController controller = StackCanvasController();
+  final StackCanvasController controller = StackCanvasController(
+    offsetReference: Reference.Center,
+    zoomReference: Reference.Center,
+  );
 
   @override
   void initState() {
@@ -35,8 +38,8 @@ class _HomePageState extends State<HomePage> {
     // Add dummy objects
     controller.addCanvasObjects([
       CanvasObject<Widget>(
-        dx: 10,
-        dy: 10,
+        dx: -100,
+        dy: -100,
         width: 40,
         height: 60,
         child: Container(
@@ -44,8 +47,8 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       CanvasObject<Widget>(
-        dx: 140,
-        dy: 60,
+        dx: 30,
+        dy: -120,
         width: 80,
         height: 80,
         child: Container(
@@ -53,8 +56,8 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       CanvasObject<Widget>(
-        dx: 60,
-        dy: 160,
+        dx: 10,
+        dy: -20,
         width: 100,
         height: 60,
         child: Container(
