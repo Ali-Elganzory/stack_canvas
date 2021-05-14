@@ -44,7 +44,7 @@ class CanvasObject<T> {
 
   CanvasObject<T> transform(Offset offset, double scale) {
     final Rect transformedRect = this.rect.transform(offset, scale);
-    
+
     return this.copyWith(
       dx: transformedRect.left,
       dy: transformedRect.top,
@@ -53,9 +53,11 @@ class CanvasObject<T> {
     );
   }
 
-  CanvasObject<T> transformFromOrigin(Offset offset, double scale, Offset origin) {
-    final Rect transformedRect = this.rect.transformFromOrigin(offset, scale, origin);
-    
+  CanvasObject<T> transformFromOrigin(
+      Offset offset, double scale, Offset origin) {
+    final Rect transformedRect =
+        this.rect.transformFromOrigin(offset, scale, origin);
+
     return this.copyWith(
       dx: transformedRect.left,
       dy: transformedRect.top,
