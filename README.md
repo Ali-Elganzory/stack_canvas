@@ -37,7 +37,7 @@ class MyView extends StatelessWidget {
     }
 }
 ```
-![Empty Canvas](misc/empty.png)
+![Empty Canvas](https://raw.githubusercontent.com/Ali-Elganzory/stack_canvas/main/misc/empty.png)
 
 
 
@@ -75,7 +75,7 @@ controller.addCanvasObjects(objects);
 
 Voilà!
 
-![Empty Canvas](https://raw.githubusercontent.com/Ali-Elganzory/stack_canvas/main/misc/object.png)
+![Single Widget](https://raw.githubusercontent.com/Ali-Elganzory/stack_canvas/main/misc/object.png)
 
 
 ## Zoom & Move
@@ -132,4 +132,4 @@ StackCanvasController(
 
 ### Example 2
 
-<video src="misc/growing_triangles.mp4" autoplay loop muted width="100%"></video>
+<video src="https://user-images.githubusercontent.com/50919012/118300365-20c01580-b4e2-11eb-807a-f35e1328c310.mp4" autoplay loop muted width="100%"></video>
