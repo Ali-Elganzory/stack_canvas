@@ -1,6 +1,6 @@
 name: stack_canvas
 description: A simple customizable canvas for placing widgets in a free style canvas-like manner by wrapping the widget in a Canvas Object and specifying its offset and size.
-version: 0.2.0+1
+version: 0.2.0+2
 homepage: https://github.com/Ali-Elganzory
 repository: https://github.com/Ali-Elganzory/stack_canvas
 publish_to: https://pub.dev
