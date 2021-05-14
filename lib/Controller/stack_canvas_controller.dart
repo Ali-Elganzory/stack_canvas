@@ -124,6 +124,11 @@ class StackCanvasController {
     _updateCanvas();
   }
 
+  void clearCanvas() {
+    _canvasObjects.clear();
+    _updateCanvas();
+  }
+
   // Dispose any unmanaged resources
   void dispose() {
     _canvasObjectsStreamController.close();
