@@ -75,7 +75,7 @@ controller.addCanvasObjects(objects);
 
 Voilà!
 
-![Empty Canvas](misc/object.png)
+![Empty Canvas](https://raw.githubusercontent.com/Ali-Elganzory/stack_canvas/main/misc/object.png)
 
 
 ## Zoom & Move
@@ -90,7 +90,7 @@ controller.zoomOut();
 
 | Zoomed In | Zoomed Out |
 |:---------:|:----------:|
-| ![Empty Canvas](misc/zoomedin.png) | ![Empty Canvas](misc/zoomedout.png) |
+| ![Zoomed In](https://raw.githubusercontent.com/Ali-Elganzory/stack_canvas/main/misc/zoomedin.png) | ![Zoomed Out](https://raw.githubusercontent.com/Ali-Elganzory/stack_canvas/main/misc/zoomedout.png) |
 
 
 ### Move in 4 directions
@@ -124,5 +124,12 @@ StackCanvasController(
 )
 ```
 
-https://user-images.githubusercontent.com/50919012/118004334-aa88ab00-b349-11eb-8255-c2debd185eb3.mp4
+## Examples
 
+### Example 1
+
+<video src="https://user-images.githubusercontent.com/50919012/118004334-aa88ab00-b349-11eb-8255-c2debd185eb3.mp4" autoplay loop muted width="100%"></video>
+
+### Example 2
+
+<video src="misc/growing_triangles.mp4" autoplay loop muted width="100%"></video>
